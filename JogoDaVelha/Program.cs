@@ -27,6 +27,81 @@ namespace JogoDaVelha {
             Console.WriteLine("Escolha seu ícone:(X/O)");
             escolhaIconeDoJogador = Console.ReadLine();
 
+            string[,] ConverterJogada(int Jogada) {
+                string[,] matriz = new string[3, 3];
+
+
+                if (Jogada == 1) {
+                    if (matriz[0, 0] == null) {
+                        matriz[0, 0] = jogadaDaVez;
+                    } else {
+                        Console.WriteLine("A casa já tem uma jogada");
+                    }
+
+                } else if (Jogada == 2) {
+                    if (matriz[0, 1] == null) {
+                        matriz[0, 1] = jogadaDaVez;
+                    } else {
+                        Console.WriteLine("A casa já tem uma jogada");
+                    }
+
+                } else if (Jogada == 3) {
+                    if (matriz[0, 2] == null) {
+                        matriz[0, 2] = jogadaDaVez;
+                    } else {
+                        Console.WriteLine("A casa já tem uma jogada");
+                    }
+
+                } else if (Jogada == 4) {
+                    if (matriz[1, 0] == null) {
+                        matriz[1, 0] = jogadaDaVez;
+                    } else {
+                        Console.WriteLine("A casa já tem uma jogada");
+                    }
+
+                } else if (Jogada == 5) {
+                    if (matriz[1, 1] == null) {
+                        matriz[1, 1] = jogadaDaVez;
+                    } else {
+                        Console.WriteLine("A casa já tem uma jogada");
+                    }
+
+                } else if (Jogada == 6) {
+                    if (matriz[1, 2] == null) {
+                        matriz[1, 2] = jogadaDaVez;
+                    } else {
+                        Console.WriteLine("A casa já tem uma jogada");
+                    }
+
+                } else if (Jogada == 7) {
+                    if (matriz[2, 0] == null) {
+                        matriz[2, 0] = jogadaDaVez;
+                    } else {
+                        Console.WriteLine("A casa já tem uma jogada");
+                    }
+
+                } else if (Jogada == 8) {
+                    if (matriz[2, 1] == null) {
+                        matriz[2, 1] = jogadaDaVez;
+                    } else {
+                        Console.WriteLine("A casa já tem uma jogada");
+                    }
+
+                } else if (Jogada == 9) {
+                    if (matriz[2, 2] == null) {
+                        matriz[2, 2] = jogadaDaVez;
+                    } else {
+                        Console.WriteLine("A casa já tem uma jogada");
+                    }
+
+                } else {
+                    Console.WriteLine("Jogada inválida");
+                }
+                return matriz;
+            }
+
+
+
 
             double EscolhaDoIcone(string escolhaIcone) {
 
@@ -34,56 +109,15 @@ namespace JogoDaVelha {
                     Console.WriteLine("O outro jogador será 'O'\n");
                     classificacaoJogada = 1;
 
-                }
-                else if (escolhaIcone == "o" || escolhaIcone == "O") {
+                } else if (escolhaIcone == "o" || escolhaIcone == "O") {
                     Console.WriteLine("O outro jogador será o 'X'");
                     classificacaoJogada = -1;
-                }
-                else {
+                } else {
                     Console.WriteLine("Caracter inválido");
                 }
+
                 return classificacaoJogada;
             }
-
-
-
-            string[,] ConverterJogada(int Jogada) {
-                string[,] matriz = new string[3, 3];
-
-
-                if (Jogada == 1) {
-                    matriz[0, 0] = jogadaDaVez;
-                }
-                else if (Jogada == 2) {
-                    matriz[0, 1] = jogadaDaVez;
-                }
-                else if (Jogada == 3) {
-                    matriz[0, 2] = jogadaDaVez;
-                }
-                else if (Jogada == 4) {
-                    matriz[1, 0] = jogadaDaVez;
-                }
-                else if (Jogada == 5) {
-                    matriz[1, 1] = jogadaDaVez;
-                }
-                else if (Jogada == 6) {
-                    matriz[1, 2] = jogadaDaVez;
-                }
-                else if (Jogada == 7) {
-                    matriz[2, 0] = jogadaDaVez;
-                }
-                else if (Jogada == 8) {
-                    matriz[2, 1] = jogadaDaVez;
-                }
-                else if (Jogada == 9) {
-                    matriz[2, 2] = jogadaDaVez;
-                }
-                else {
-                    Console.WriteLine("Jogada inválida");
-                }
-                return matriz;
-            }
-
 
 
             for (
@@ -105,7 +139,7 @@ namespace JogoDaVelha {
                     jogada = Convert.ToInt32(Console.ReadLine());
                     jogadaDaVez = "O";
                     ConverterJogada(jogada);
-                    retornoDaJogada = 1;   
+                    retornoDaJogada = 1;
                 }
 
 
