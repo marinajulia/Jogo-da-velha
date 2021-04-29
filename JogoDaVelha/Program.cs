@@ -9,7 +9,7 @@ namespace JogoDaVelha {
             var funcoesMatriz = new FuncoesDeMatriz();
             int jogada;
             string jogadaDaVez = "", vencedor = "nenhum";
-            double soma = 0, somaDiagonalPrincipal = 0, somaDiagonalSecundaria = 0;
+            double soma = 0;
             var matriz = new string[3, 3];
             var matrizNumerica = new double[3, 3];
 
@@ -17,7 +17,7 @@ namespace JogoDaVelha {
             double retornoDaJogada = functions.EscolhaDoIcone(obtemInformacoes);
 
             void VerificarVencedor() {
-                //double[] somaColuna = new double[matrizNumerica.Length];
+               
                 for (int i = 0; i < 3; i++) {
 
                     for (int j = 0; j < 3; j++) {
@@ -25,24 +25,51 @@ namespace JogoDaVelha {
                         soma += matrizNumerica[i, j];
                         if (soma == 3) {
                             vencedor = "x";
-                            break;
+
                         }
                         else if (soma == -3) {
                             vencedor = "o";
-                            break;
+
                         }
-                                                                
-                    } soma = 0;
+
+                    }
+                    soma = 0;
                 }
                 for (int i = 0; i < 3; i++) {
 
-                    for (int j = 0; j < 3; j++) { 
-                    
+                    for (int j = 0; j < 3; j++) {
+                        soma += matrizNumerica[j, i];
+                        if (soma == 3) {
+                            vencedor = "x";
+
+                        }
+                        else if (soma == -3) {
+                            vencedor = "o";
+
+                        }
                     }
+                    soma = 0;
+                }
+                for (int i = 0; i < 3; i++) {
+
+                    for (int j = 0; j < 3; j++) {
+
+                        if (i == j) {
+                            soma += matrizNumerica[i, j];
+                            if (soma == 3) {
+                                vencedor = "x";
+
+                            }
+                            else if (soma == -3) {
+                                vencedor = "o";
+
+                            }
+                        }
+                    }
+                    
                 }
 
-
-                        Console.WriteLine("O vencedor é: "+ vencedor);
+                Console.WriteLine("O vencedor é: " + vencedor);
             }
 
 
@@ -97,7 +124,8 @@ namespace JogoDaVelha {
                         imprimeJogada = "";
 
                     }
-                } VerificarVencedor();
+                }
+                VerificarVencedor();
 
             }
 
