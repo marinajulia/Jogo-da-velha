@@ -17,7 +17,7 @@ namespace JogoDaVelha {
             double retornoDaJogada = functions.EscolhaDoIcone(obtemInformacoes);
 
             void VerificarVencedor() {
-               
+
                 for (int i = 0; i < 3; i++) {
 
                     for (int j = 0; j < 3; j++) {
@@ -50,6 +50,7 @@ namespace JogoDaVelha {
                     }
                     soma = 0;
                 }
+                //corrigir erro
                 for (int i = 0; i < 3; i++) {
 
                     for (int j = 0; j < 3; j++) {
@@ -66,8 +67,28 @@ namespace JogoDaVelha {
                             }
                         }
                     }
-                    
+
                 }
+
+                for (int i = 0; i < 3; i++) {
+
+                    for (int j = 0; j < 3; j++) {
+                        if (i + j == 2) {
+                            soma += matrizNumerica[i, j];
+                            if (soma == 3) {
+                                vencedor = "x";
+
+                            }
+                            else if (soma == -3) {
+                                vencedor = "o";
+
+                            }
+                        }
+                    }
+
+                }
+
+
 
                 Console.WriteLine("O vencedor é: " + vencedor);
             }
