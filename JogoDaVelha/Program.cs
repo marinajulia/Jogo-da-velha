@@ -80,7 +80,10 @@ namespace JogoDaVelha {
                     Console.WriteLine("Faça a jogada do 'X'");
                     jogada = Convert.ToInt32(Console.ReadLine());
                     jogadaDaVez = "x";
-                    var passarParaCoordenada = funcoesMatriz.ConverterJogada(jogada, Matrizes.matriz[], jogadaDaVez);
+                    Matrizes matrizCompleta = new Matrizes();
+                    matrizCompleta.matriz = matriz;
+                    matrizCompleta.matrizNumerica = matrizNumerica;
+                    var passarParaCoordenada = funcoesMatriz.ConverterJogada(jogada, matrizCompleta, jogadaDaVez);
                     retornoDaJogada = -1;
                     string imprimeJogada = "";
 
@@ -103,7 +106,10 @@ namespace JogoDaVelha {
                     Console.WriteLine("Faça a jogada do 'O'");
                     jogada = Convert.ToInt32(Console.ReadLine());
                     jogadaDaVez = "o";
-                    var passarParaCoordenada = funcoesMatriz.ConverterJogada(jogada, Matrizes.matriz[], jogadaDaVez);
+                    Matrizes matrizCompleta = new Matrizes();
+                    matrizCompleta.matriz = matriz;
+                    matrizCompleta.matrizNumerica = matrizNumerica;
+                    var passarParaCoordenada = funcoesMatriz.ConverterJogada(jogada, matrizCompleta, jogadaDaVez);
                     retornoDaJogada = 1;
                     string imprimeJogada = "";
 
@@ -117,7 +123,7 @@ namespace JogoDaVelha {
                         imprimeJogada = "";
 
                     }
-                } VerificarVencedor();
+                } //VerificarVencedor();
 
             }
 
