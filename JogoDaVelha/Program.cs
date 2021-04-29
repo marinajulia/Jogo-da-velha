@@ -10,65 +10,39 @@ namespace JogoDaVelha {
             int jogada;
             string jogadaDaVez = "", vencedor = "nenhum";
             double soma = 0, somaDiagonalPrincipal = 0, somaDiagonalSecundaria = 0;
-            string[,] matriz = new string[3, 3];
-            double[,] matrizNumerica = new double[3, 3];
+            var matriz = new string[3, 3];
+            var matrizNumerica = new double[3, 3];
 
             var obtemInformacoes = functions.Informacoes();
             double retornoDaJogada = functions.EscolhaDoIcone(obtemInformacoes);
 
             void VerificarVencedor() {
-                double[] somaColuna = new double[matrizNumerica.Length];
-                for (int l = 0; l < 3; l++) {
+                //double[] somaColuna = new double[matrizNumerica.Length];
+                for (int i = 0; i < 3; i++) {
 
                     for (int j = 0; j < 3; j++) {
-                        soma += matrizNumerica[l, j];
+
+                        soma += matrizNumerica[i, j];
                         if (soma == 3) {
                             vencedor = "x";
+                            break;
                         }
                         else if (soma == -3) {
                             vencedor = "o";
+                            break;
                         }
-                        ////verifica coluna
-                        //somaColuna[j] += matrizNumerica[l, j];
+                                                                
+                    } soma = 0;
+                }
+                for (int i = 0; i < 3; i++) {
 
-                        //for (int x = 0; x < somaColuna.Length; x++) {
-
-                        //    if (somaColuna[x] == 3) {
-                        //        vencedor = "x";
-
-                        //    }
-                        //    else if (somaColuna[x] == -3) {
-                        //        vencedor = "o";
-
-                        //    }
-                        //}
-                        ////verifica a soma da diagonal principal
-                        //if (l == j) {
-                        //    somaDiagonalPrincipal += matrizNumerica[l, j];
-                        //    if (somaDiagonalPrincipal == 3) {
-                        //        vencedor = "x";
-
-                        //    }
-                        //    else if (somaDiagonalPrincipal == -3) {
-                        //        vencedor = "o";
-
-                        //    }
-                        //}
-                        ////verifica a soma da diagonal secundária
-                        //if (l + j == 2) {
-                        //    somaDiagonalSecundaria += matrizNumerica[l, j];
-                        //    if (somaDiagonalSecundaria == 3) {
-                        //        vencedor = "x";
-
-                        //    }
-                        //    else if (somaDiagonalSecundaria == -3) {
-                        //        vencedor = "o";
-
-                        //    }
-                        //}
+                    for (int j = 0; j < 3; j++) { 
+                    
                     }
                 }
-                Console.WriteLine("O vencedor é: "+ vencedor);
+
+
+                        Console.WriteLine("O vencedor é: "+ vencedor);
             }
 
 
@@ -123,7 +97,7 @@ namespace JogoDaVelha {
                         imprimeJogada = "";
 
                     }
-                } //VerificarVencedor();
+                } VerificarVencedor();
 
             }
 
