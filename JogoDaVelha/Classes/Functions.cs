@@ -14,7 +14,7 @@ namespace JogoDaVelha.Classes {
             Console.WriteLine("Posições possíveis: 1|2|3");
             Console.WriteLine("                    4|5|6");
             Console.WriteLine("                    7|8|9\n");
-            Console.WriteLine("--------------------------------------------\n");
+            Console.WriteLine("-------------------------------------------------------------------\n");
             Console.WriteLine("**Vamos jogar!**\n");
             Console.WriteLine("Escolha seu ícone:(X/O)");
             iconeEscolhido = Console.ReadLine();
@@ -44,8 +44,12 @@ namespace JogoDaVelha.Classes {
             Console.WriteLine("A casa já tem uma jogada");
         }
 
-
-
+        public void MensagemSucesso(string vencedor) {
+            Console.WriteLine("O vencedor é: " + vencedor);
+        }
+        public void MensagemEmpate() {
+            Console.WriteLine("Houve um empate!");
+        }
 
     }
 }

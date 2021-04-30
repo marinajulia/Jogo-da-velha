@@ -5,6 +5,7 @@ namespace JogoDaVelha {
 
     class Program {
         static void Main(string[] args) {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             var functions = new Functions();
             var funcoesMatriz = new FuncoesDeMatriz();
             int jogada;
@@ -25,33 +26,42 @@ namespace JogoDaVelha {
                         soma += matrizNumerica[i, j];
                         if (soma == 3) {
                             vencedor = "x";
+                            functions.MensagemSucesso(vencedor);
+                            Environment.Exit(0);
 
-                        } else if (soma == -3) {
+                        }
+                        else if (soma == -3) {
                             vencedor = "o";
-
+                            functions.MensagemSucesso(vencedor);
+                            Environment.Exit(0);
                         }
 
                     }
                     soma = 0;
-
+                    
                 }
-                
+
                 for (int i = 0; i < 3; i++) {
 
                     for (int j = 0; j < 3; j++) {
                         soma += matrizNumerica[j, i];
                         if (soma == 3) {
                             vencedor = "x";
+                            functions.MensagemSucesso(vencedor);
+                            Environment.Exit(0);
 
-                        } else if (soma == -3) {
+                        }
+                        else if (soma == -3) {
                             vencedor = "o";
+                            functions.MensagemSucesso(vencedor);
+                            Environment.Exit(0);
 
                         }
                     }
                     soma = 0;
 
                 }
-               
+
 
                 for (int i = 0; i < 3; i++) {
 
@@ -60,14 +70,18 @@ namespace JogoDaVelha {
                             soma += matrizNumerica[i, j];
                             if (soma == 3) {
                                 vencedor = "x";
+                                functions.MensagemSucesso(vencedor);
+                                Environment.Exit(0);
 
-                            } else if (soma == -3) {
+                            }
+                            else if (soma == -3) {
                                 vencedor = "o";
-
+                                functions.MensagemSucesso(vencedor);
+                                Environment.Exit(0);
                             }
                         }
                     }
-
+                    
                 }
                 soma = 0;
 
@@ -79,30 +93,35 @@ namespace JogoDaVelha {
                             soma += matrizNumerica[i, j];
                             if (soma == 3) {
                                 vencedor = "x";
-
-                            } else if (soma == -3) {
+                                functions.MensagemSucesso(vencedor);
+                                Environment.Exit(0);
+                                
+                            }
+                            else if (soma == -3) {
                                 vencedor = "o";
-
+                                functions.MensagemSucesso(vencedor);
+                                Environment.Exit(0);
                             }
 
                         }
 
                     }
-                    
+
                 }
 
                 soma = 0;
+              
 
-
-                Console.WriteLine("O vencedor é: " + vencedor);
             }
+
+           
 
 
             for (
                 int i = 0; i < 9; i++) {
 
                 if (retornoDaJogada == 1) {
-                    Console.WriteLine("----------------------------------------------");
+                    Console.WriteLine("-------------------------------------------------------------------");
                     Console.WriteLine("Faça a jogada do 'X'");
                     jogada = Convert.ToInt32(Console.ReadLine());
                     jogadaDaVez = "x";
@@ -119,10 +138,11 @@ namespace JogoDaVelha {
 
                             if (matriz[l, j] == null) {
                                 imprimeJogada += "|" + "-" + "|";
-                            } else {
+                            }
+                            else {
                                 imprimeJogada += "|" + matriz[l, j] + "|";
                             }
-                         
+
 
                         }
 
@@ -130,9 +150,11 @@ namespace JogoDaVelha {
 
 
                         imprimeJogada = "";
+                       
 
                     }
-                } else if (retornoDaJogada == -1) {
+                }
+                else if (retornoDaJogada == -1) {
                     Console.WriteLine("----------------------------------------------");
                     Console.WriteLine("Faça a jogada do 'O'");
                     jogada = Convert.ToInt32(Console.ReadLine());
@@ -150,7 +172,8 @@ namespace JogoDaVelha {
 
                             if (matriz[l, j] == null) {
                                 imprimeJogada += "|" + "-" + "|";
-                            } else {
+                            }
+                            else {
                                 imprimeJogada += "|" + matriz[l, j] + "|";
                             }
                         }
@@ -164,7 +187,9 @@ namespace JogoDaVelha {
 
             }
 
-
+          
+                functions.MensagemEmpate();
+            
         }
     }
 }
