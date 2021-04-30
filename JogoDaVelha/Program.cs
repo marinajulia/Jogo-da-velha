@@ -26,15 +26,16 @@ namespace JogoDaVelha {
                         if (soma == 3) {
                             vencedor = "x";
 
-                        }
-                        else if (soma == -3) {
+                        } else if (soma == -3) {
                             vencedor = "o";
 
                         }
 
                     }
                     soma = 0;
+
                 }
+                
                 for (int i = 0; i < 3; i++) {
 
                     for (int j = 0; j < 3; j++) {
@@ -42,33 +43,15 @@ namespace JogoDaVelha {
                         if (soma == 3) {
                             vencedor = "x";
 
-                        }
-                        else if (soma == -3) {
+                        } else if (soma == -3) {
                             vencedor = "o";
 
                         }
                     }
                     soma = 0;
-                }
-                //corrigir erro
-                for (int i = 0; i < 3; i++) {
-
-                    for (int j = 0; j < 3; j++) {
-
-                        if (i == j) {
-                            soma += matrizNumerica[i, j];
-                            if (soma == 3) {
-                                vencedor = "x";
-
-                            }
-                            else if (soma == -3) {
-                                vencedor = "o";
-
-                            }
-                        }
-                    }
 
                 }
+               
 
                 for (int i = 0; i < 3; i++) {
 
@@ -78,8 +61,7 @@ namespace JogoDaVelha {
                             if (soma == 3) {
                                 vencedor = "x";
 
-                            }
-                            else if (soma == -3) {
+                            } else if (soma == -3) {
                                 vencedor = "o";
 
                             }
@@ -87,7 +69,29 @@ namespace JogoDaVelha {
                     }
 
                 }
+                soma = 0;
 
+
+                for (int i = 0; i < 3; i++) {
+
+                    for (int j = 0; j < 3; j++) {
+                        if (i == j) {
+                            soma += matrizNumerica[i, j];
+                            if (soma == 3) {
+                                vencedor = "x";
+
+                            } else if (soma == -3) {
+                                vencedor = "o";
+
+                            }
+
+                        }
+
+                    }
+                    
+                }
+
+                soma = 0;
 
 
                 Console.WriteLine("O vencedor é: " + vencedor);
@@ -112,7 +116,13 @@ namespace JogoDaVelha {
                     for (int l = 0; l < 3; l++) {
 
                         for (int j = 0; j < 3; j++) {
-                            imprimeJogada += "|" + matriz[l, j] + "|";
+
+                            if (matriz[l, j] == null) {
+                                imprimeJogada += "|" + "-" + "|";
+                            } else {
+                                imprimeJogada += "|" + matriz[l, j] + "|";
+                            }
+                         
 
                         }
 
@@ -122,8 +132,7 @@ namespace JogoDaVelha {
                         imprimeJogada = "";
 
                     }
-                }
-                else if (retornoDaJogada == -1) {
+                } else if (retornoDaJogada == -1) {
                     Console.WriteLine("----------------------------------------------");
                     Console.WriteLine("Faça a jogada do 'O'");
                     jogada = Convert.ToInt32(Console.ReadLine());
@@ -138,7 +147,12 @@ namespace JogoDaVelha {
                     for (int l = 0; l < 3; l++) {
 
                         for (int j = 0; j < 3; j++) {
-                            imprimeJogada += "|" + matriz[l, j] + "|";
+
+                            if (matriz[l, j] == null) {
+                                imprimeJogada += "|" + "-" + "|";
+                            } else {
+                                imprimeJogada += "|" + matriz[l, j] + "|";
+                            }
                         }
                         Console.WriteLine(imprimeJogada);
 
