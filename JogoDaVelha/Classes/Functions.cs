@@ -42,10 +42,11 @@ namespace JogoDaVelha.Classes {
         }
         public void MensagemErro() {
             Console.WriteLine("A casa já tem uma jogada");
+            Console.WriteLine("Faça sua jogada novamente");
         }
 
         public void MensagemSucesso(string vencedor) {
-            Console.WriteLine("O vencedor é: " + vencedor);
+            Console.WriteLine("O vencedor é:\n>>" + vencedor);
         }
         public void MensagemEmpate() {
             Console.WriteLine("Houve um empate!");

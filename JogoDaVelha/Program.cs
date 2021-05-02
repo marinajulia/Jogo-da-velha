@@ -114,22 +114,22 @@ namespace JogoDaVelha {
 
             }
 
-           
+            Matrizes matrizCompleta = new Matrizes();
+            matrizCompleta.matriz = matriz;
+            matrizCompleta.matrizNumerica = matrizNumerica;
 
-
-            for (
-                int i = 0; i < 9; i++) {
+            while (vencedor != null) {
 
                 if (retornoDaJogada == 1) {
                     Console.WriteLine("-------------------------------------------------------------------");
                     Console.WriteLine("Faça a jogada do 'X'");
                     jogada = Convert.ToInt32(Console.ReadLine());
                     jogadaDaVez = "x";
-                    Matrizes matrizCompleta = new Matrizes();
-                    matrizCompleta.matriz = matriz;
-                    matrizCompleta.matrizNumerica = matrizNumerica;
-                    var passarParaCoordenada = funcoesMatriz.ConverterJogada(jogada, matrizCompleta, jogadaDaVez);
-                    retornoDaJogada = -1;
+                   
+                   bool jogadaFeitaComSucesso = funcoesMatriz.ConverterJogada(jogada, matrizCompleta, jogadaDaVez);
+                    if (jogadaFeitaComSucesso) {
+                        retornoDaJogada = -1;
+                    }
                     string imprimeJogada = "";
 
                     for (int l = 0; l < 3; l++) {
@@ -159,11 +159,12 @@ namespace JogoDaVelha {
                     Console.WriteLine("Faça a jogada do 'O'");
                     jogada = Convert.ToInt32(Console.ReadLine());
                     jogadaDaVez = "o";
-                    Matrizes matrizCompleta = new Matrizes();
-                    matrizCompleta.matriz = matriz;
-                    matrizCompleta.matrizNumerica = matrizNumerica;
-                    var passarParaCoordenada = funcoesMatriz.ConverterJogada(jogada, matrizCompleta, jogadaDaVez);
-                    retornoDaJogada = 1;
+
+                    bool jogadaFeitaComSucesso = funcoesMatriz.ConverterJogada(jogada, matrizCompleta, jogadaDaVez);
+                    if (jogadaFeitaComSucesso) {
+                        retornoDaJogada = 1;
+                    }
+
                     string imprimeJogada = "";
 
                     for (int l = 0; l < 3; l++) {
