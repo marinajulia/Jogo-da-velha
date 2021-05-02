@@ -52,5 +52,26 @@ namespace JogoDaVelha.Classes {
             Console.WriteLine("Houve um empate!");
         }
 
+        public void ImprimirJogada(string[,] matriz) {
+            string imprimeJogada = "";
+
+            for (int l = 0; l < 3; l++) {
+
+                for (int j = 0; j < 3; j++) {
+
+                    if (matriz[l, j] == null) {
+                        imprimeJogada += "|" + "-" + "|";
+                    }
+                    else {
+                        imprimeJogada += "|" + matriz[l, j] + "|";
+                    }
+                }
+                Console.WriteLine(imprimeJogada);
+
+                imprimeJogada = "";
+
+            }
+        }
+
     }
 }
