@@ -36,6 +36,7 @@ namespace JogoDaVelha.Classes {
             }
             else {
                 Console.WriteLine("Caracter inválido");
+                Environment.Exit(0);
             }
 
             return classificacaoJogada;

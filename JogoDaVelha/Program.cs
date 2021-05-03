@@ -166,15 +166,7 @@ namespace JogoDaVelha {
             } else if(resultadoDoJogo == "VELHA") {
                 functions.MensagemEmpate();
             }
-
-
-
-
         }
-
-
-
-
     }
 }
 
