@@ -162,7 +162,7 @@ namespace JogoDaVelha {
             }
 
             else if (resultadoDoJogo == "o") {
-                functions.MensagemSucesso("x");
+                functions.MensagemSucesso("o");
             } else if(resultadoDoJogo == "VELHA") {
                 functions.MensagemEmpate();
             }
