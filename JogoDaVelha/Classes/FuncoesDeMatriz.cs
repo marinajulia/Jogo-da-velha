@@ -28,7 +28,7 @@ namespace JogoDaVelha.Classes {
                     functions.MensagemErro();
                     return false;
 
-                    //preciso retornar para fazer a jogada - talvez um while?
+                   
                 }
 
             }
